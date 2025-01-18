@@ -10,7 +10,19 @@ def test_view(request):
     return HttpResponse("Hello, world!")
 
 # Signup View
+# def signup_view(request):
+#     if request.method == 'POST':
+#         username = request.POST['username']
+#         email = request.POST['email']
+#         password = request.POST['password']
+#         if not UserDetails.objects.filter(email=email).exists():
+#             UserDetails.objects.create(username=username, email=email, password=password)
+#             return redirect('login')
+#         else:
+#             return HttpResponse("Email already exists.")
+#     return render(request, 'signup.html')
 def signup_view(request):
+    print("Trying to render signup.html")  # Debugging
     if request.method == 'POST':
         username = request.POST['username']
         email = request.POST['email']
